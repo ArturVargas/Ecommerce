@@ -1,8 +1,10 @@
 
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 const MenuItem = (props) => (
-  <div>
+  console.log(props),
+  <div onClick={() => props.history.push(`${props.match.url}${props.linkUrl}`)}>
     <div className="row my-4">
       <div className="col-8 justify-content-center">
         <div className="card">
@@ -17,4 +19,4 @@ const MenuItem = (props) => (
   </div>
 );
 
-export default MenuItem;
+export default withRouter(MenuItem);
